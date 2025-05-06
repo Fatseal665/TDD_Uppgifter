@@ -1,10 +1,10 @@
-package se.martin.demo.cards;
+package se.demo.cardgame.cards;
 
 public class Card {
     int value;
     Suit suit;
 
-    Card(int value, Suit suit) {
+    public Card(int value, Suit suit) {
         this.value = value;
         this.suit = suit;
     }

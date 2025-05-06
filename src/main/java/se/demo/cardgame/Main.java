@@ -1,6 +1,6 @@
-package se.martin.demo;
+package se.demo.cardgame;
 
-import se.martin.demo.cards.Deck;
+import se.demo.cardgame.cards.Deck;
 
 public class Main {
     public static void main(String[] args) {

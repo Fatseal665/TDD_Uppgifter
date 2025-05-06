@@ -1,4 +1,4 @@
-package se.martin.demo.cards;
+package se.demo.cardgame.cards;
 
 import java.util.ArrayList;
 import java.util.Collections;
