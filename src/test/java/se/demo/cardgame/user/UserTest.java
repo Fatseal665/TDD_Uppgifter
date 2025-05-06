@@ -34,4 +34,50 @@ public class UserTest {
 
         assertEquals(cards, user.getCards());
     }
+
+
+    @Test
+    void testIfPlayerCanCalculatePointsWhitOneCard(){
+        User user = new User();
+        Card card1 = new Card(7, Suit.Spades);
+
+        user.giveCard(card1);
+
+        assertEquals(7, user.getPoints());
+    }
+    @Test
+    void testIfPlayerCanCalculateThePointsInTheirHand(){
+        User user = new User();
+        Card card1 = new Card(7, Suit.Spades);
+        Card card2 = new Card(10, Suit.Hearts);
+
+        user.giveCard(card1);
+        user.giveCard(card2);
+
+        assertEquals(17, user.getPoints());
+    }
+    @Test
+    void testIfPlayerCanCalculateThePointsInTheirHandWhitAAceUnder(){
+        User user = new User();
+        Card card1 = new Card(9, Suit.Spades);
+        Card card2 = new Card(14, Suit.Hearts);
+
+        user.giveCard(card1);
+        user.giveCard(card2);
+
+        assertEquals(20, user.getPoints());
+    }
+    @Test
+    void testIfPlayerCanCalculateThePointsInTheirHandWhitAAceOver(){
+        User user = new User();
+        Card card1 = new Card(10, Suit.Spades);
+        Card card2 = new Card(14, Suit.Hearts);
+        Card card3 = new Card(5, Suit.Clubs);
+
+        user.giveCard(card1);
+        user.giveCard(card2);
+        user.giveCard(card3);
+
+        assertEquals(16, user.getPoints());
+    }
 }
