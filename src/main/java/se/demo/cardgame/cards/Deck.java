@@ -31,14 +31,11 @@ public class Deck {
         Collections.shuffle(deck);
     }
     public Card drawCard(){
-        Card card = deck.remove(0);
-        discardCard(card);
+        Card card = deck.removeFirst();
         return card;
     }
     public void discardCard(Card card){
         deck.remove(card);
     }
-    public void addCard(Card card){
-        deck.add(card);
-    }
+    public void addCard(Card card){deck.add(card);}
 }

@@ -80,4 +80,16 @@ public class UserTest {
 
         assertEquals(16, user.getPoints());
     }
+
+    @Test
+    void printHandTest() {
+        User user = new User();
+        Card card1 = new Card(7, Suit.Spades);
+        Card card2 = new Card(12, Suit.Hearts);
+
+        user.giveCard(card1);
+        user.giveCard(card2);
+
+        user.printHand();
+    }
 }

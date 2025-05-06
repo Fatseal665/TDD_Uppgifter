@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class User {
     ArrayList<Card> cards = new ArrayList<>();
+    private ArrayList<Card> cards1;
 
     public User() {
     }
@@ -15,41 +16,42 @@ public class User {
     }
 
     public ArrayList<Card> getCards() {
-        return cards;
+        return cards1;
     }
 
     public Card getCard(int cardId) {
         return cards.get(cardId);
     }
 
-    public int getPoints(){
+    public int getPoints() {
         int points = 0;
         int numberOfAces = 0;
 
         for (Card card : cards) {
-            if (card.getValue() <= 10){
+            if (card.getValue() <= 10) {
                 points += card.getValue();
-            }
-            else if (card.getValue() <= 13){
+            } else if (card.getValue() <= 13) {
                 points += 10;
-            }
-            else if (card.getValue() == 14){
+            } else if (card.getValue() == 14) {
                 numberOfAces += 1;
             }
         }
         for (int i = 0; i < numberOfAces; i++) {
-            if (points+11 <= 21){
+            if (points + 11 <= 21) {
                 points += 11;
-            }else
-                points += 1;
+            } else points += 1;
         }
 
         return points;
     }
 
+    public void printHand(){
+        System.out.println("Your hand is: ");
 
-
-
+        for (Card card : cards) {
+            System.out.println(card);
+        }
+    }
 
 
 }
