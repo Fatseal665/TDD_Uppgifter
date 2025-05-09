@@ -8,7 +8,7 @@ public class DeckTest {
     @Test
     public void shuffleTest() {
         Deck deck = new Deck();
-        Card card = new Card(2, Suit.Spades);
+        Card card = new Card(2, Suit.SPADES);
         deck.shuffle();
 
         assertNotEquals(card, deck.drawCard());

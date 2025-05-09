@@ -5,19 +5,18 @@ import java.util.Collections;
 import java.util.List;
 
 public class Deck {
-    List<Card> deck = new ArrayList<Card>();
+    ArrayList<Card> deck = new ArrayList<Card>();
     public Deck(){
         for (int i = 0; i < 4; i++){
             for (int j = 2; j < 15; j++){
                 Suit suit;
                 switch (i){
-                    case 0: suit = Suit.Spades; break;
-                    case 1: suit = Suit.Clubs; break;
-                    case 2: suit = Suit.Diamonds; break;
-                    case 3: suit = Suit.Hearts; break;
-                    default: suit = Suit.Spades;
+                    case 0: suit = Suit.SPADES; break;
+                    case 1: suit = Suit.CLUBS; break;
+                    case 2: suit = Suit.DIAMONDS; break;
+                    case 3: suit = Suit.HEARTS; break;
+                    default: suit = Suit.SPADES;
                 }
-
                 deck.add(new Card(j,suit));
             }
         }

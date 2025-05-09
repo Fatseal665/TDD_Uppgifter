@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Suit;
-import se.demo.cardgame.user.User;
 
 import java.util.ArrayList;
 
@@ -13,7 +12,7 @@ public class UserTest {
     @Test
     void testIfPlayerCanKeepCards() {
         User user = new User();
-        Card card = new Card(7, Suit.Spades);
+        Card card = new Card(7, Suit.SPADES);
 
         user.giveCard(card);
         assertEquals(card, user.getCard(0));
@@ -22,8 +21,8 @@ public class UserTest {
     @Test
     void testIfPlayerCanKeepSeveralCards() {
         User user = new User();
-        Card card1 = new Card(7, Suit.Spades);
-        Card card2 = new Card(14, Suit.Hearts);
+        Card card1 = new Card(7, Suit.SPADES);
+        Card card2 = new Card(14, Suit.HEARTS);
 
         user.giveCard(card1);
         user.giveCard(card2);
@@ -39,7 +38,7 @@ public class UserTest {
     @Test
     void testIfPlayerCanCalculatePointsWhitOneCard(){
         User user = new User();
-        Card card1 = new Card(7, Suit.Spades);
+        Card card1 = new Card(7, Suit.SPADES);
 
         user.giveCard(card1);
 
@@ -48,8 +47,8 @@ public class UserTest {
     @Test
     void testIfPlayerCanCalculateThePointsInTheirHand(){
         User user = new User();
-        Card card1 = new Card(7, Suit.Spades);
-        Card card2 = new Card(10, Suit.Hearts);
+        Card card1 = new Card(7, Suit.SPADES);
+        Card card2 = new Card(10, Suit.HEARTS);
 
         user.giveCard(card1);
         user.giveCard(card2);
@@ -59,8 +58,8 @@ public class UserTest {
     @Test
     void testIfPlayerCanCalculateThePointsInTheirHandWhitAAceUnder(){
         User user = new User();
-        Card card1 = new Card(9, Suit.Spades);
-        Card card2 = new Card(14, Suit.Hearts);
+        Card card1 = new Card(9, Suit.SPADES);
+        Card card2 = new Card(14, Suit.HEARTS);
 
         user.giveCard(card1);
         user.giveCard(card2);
@@ -70,9 +69,9 @@ public class UserTest {
     @Test
     void testIfPlayerCanCalculateThePointsInTheirHandWhitAAceOver(){
         User user = new User();
-        Card card1 = new Card(10, Suit.Spades);
-        Card card2 = new Card(14, Suit.Hearts);
-        Card card3 = new Card(5, Suit.Clubs);
+        Card card1 = new Card(10, Suit.SPADES);
+        Card card2 = new Card(14, Suit.HEARTS);
+        Card card3 = new Card(5, Suit.CLUBS);
 
         user.giveCard(card1);
         user.giveCard(card2);
@@ -84,8 +83,8 @@ public class UserTest {
     @Test
     void printHandTest() {
         User user = new User();
-        Card card1 = new Card(7, Suit.Spades);
-        Card card2 = new Card(12, Suit.Hearts);
+        Card card1 = new Card(7, Suit.SPADES);
+        Card card2 = new Card(12, Suit.HEARTS);
 
         user.giveCard(card1);
         user.giveCard(card2);

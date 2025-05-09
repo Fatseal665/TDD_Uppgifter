@@ -5,8 +5,7 @@ import se.demo.cardgame.cards.Card;
 import java.util.ArrayList;
 
 public class User {
-    ArrayList<Card> cards = new ArrayList<>();
-    private ArrayList<Card> cards1;
+    private ArrayList<Card> cards = new ArrayList<>();
 
     public User() {
     }
@@ -16,7 +15,7 @@ public class User {
     }
 
     public ArrayList<Card> getCards() {
-        return cards1;
+        return cards;
     }
 
     public Card getCard(int cardId) {
