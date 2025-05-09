@@ -89,6 +89,8 @@ public class UserTest {
         user.giveCard(card1);
         user.giveCard(card2);
 
-        user.printHand();
+        user.printHand();                           //most to fast test printHande
+        assertNotNull(user.getCards().get(1));
+
     }
 }
