@@ -170,10 +170,11 @@ public class PlayTest {
 
         boolean playerWin = Play.calculateResult(player,dealer);
 
-        assertEquals(false, playerWin);}
+        assertEquals(false, playerWin);
+    }
 
 
-    public static User giveCards(ArrayList<Card> cards,User user) {
+    public static void giveCards(ArrayList<Card> cards,User user) {
         for (Card card : cards) {
             user.giveCard(card);
         }

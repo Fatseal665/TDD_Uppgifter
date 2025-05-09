@@ -37,4 +37,4 @@ Split: If you have two cards of the same value, you can split them into two hand
 #4.5 Determine Outcome:
      Player Wins: Hand is closer to 21 than the dealer's, or dealer busts.
      Dealer Wins: Dealer's hand is closer to 21, or player busts.
-     Push: Tie; the player's bet is returned.
+     Tie: the player loses.
