@@ -21,6 +21,11 @@ public class Deck {
             }
         }
     }
+    
+    public Deck(ArrayList<Card> cards) {
+        deck = cards;
+    }
+    
     public void printDeck(){
         for (Card card : deck){
             System.out.println(card);

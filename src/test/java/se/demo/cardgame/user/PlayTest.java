@@ -13,11 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PlayTest {
     @Test
     void testHit() {
-        Deck deck = new Deck();
-        User user = new User();
-
         Card card = new Card(2, Suit.SPADES);
+        ArrayList<Card> hand = new ArrayList<>();
+        hand.add(card);
 
+        Deck deck = new Deck(hand);
+        User user = new User();
 
         Play.hit(user, deck);
 
@@ -31,6 +32,8 @@ public class PlayTest {
 
         cards.add(new Card(10, Suit.SPADES));
         cards.add(new Card(8, Suit.DIAMONDS));
+        //This card should not appear
+        cards.add(new Card(14, Suit.SPADES));
 
         Deck deck = new Deck(cards);
         User dealer = new User();
@@ -47,6 +50,9 @@ public class PlayTest {
         cards.add(new Card(10, Suit.SPADES));
         cards.add(new Card(6, Suit.DIAMONDS));
         cards.add(new Card(8, Suit.CLUBS));
+        //This card should not appear
+        cards.add(new Card(14, Suit.SPADES));
+
 
         Deck deck = new Deck(cards);
         User dealer = new User();
