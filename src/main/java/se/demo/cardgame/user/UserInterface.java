@@ -30,6 +30,25 @@ public class UserInterface {
         return choice;
     }
 
+    public static void pause(){
+        try{
+            for(int i =0; i<3;i++){
+                System.out.print(".");
+                Thread.sleep(1000);
+            }
+        } catch(InterruptedException e){
+            System.out.println(e);
+        }
+        System.out.println();
+    }
+
+    public static String getUserName(){
+        System.out.print("Enter your name: ");
+        String name =scanner.nextLine();
+        System.out.println("Welcome "+name);
+        return name;
+    }
+
     public static boolean choiceMade(String choice, Deck deck, User user) {
         return switch (choice) {
             case "hit" -> {

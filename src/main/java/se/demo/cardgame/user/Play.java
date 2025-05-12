@@ -11,6 +11,7 @@ public class Play {
 
     public static void dealerPlay(User dealer, Deck deck) {
         while (dealer.getPoints() <= 17) {
+            UserInterface.pause();
             hit(dealer, deck);
             dealer.printHand();
         }
@@ -20,9 +21,9 @@ public class Play {
     public static void playerPlay(User player, Deck deck) {
         boolean cont;
         do {
-            player.printHand();
             String choice = UserInterface.playerChoice();
             cont = UserInterface.choiceMade(choice, deck, player);
+            player.printHand();
         } while (cont && player.getPoints() <= 21);
 
         printResult(player);
