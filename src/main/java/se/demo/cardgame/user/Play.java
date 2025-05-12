@@ -32,8 +32,7 @@ public class Play {
         }else if (playerPoints <= 21&& dealerPoints > 21) {
             result = true;
         }
-
-
+        
         return result;
     }
 }

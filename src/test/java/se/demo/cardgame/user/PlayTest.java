@@ -8,7 +8,7 @@ import se.demo.cardgame.cards.Suit;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PlayTest {
     @Test
@@ -179,4 +179,7 @@ public class PlayTest {
             user.giveCard(card);
         }
     }
+    
+//-----------------------------------------------------------------------
+    
 }
