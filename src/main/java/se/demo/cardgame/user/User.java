@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 public class User {
     private ArrayList<Card> cards = new ArrayList<>();
+    private String name;
 
-    public User() {
+    public User(String name) {
+        this.name = name;
     }
 
     public void giveCard(Card card) {
@@ -45,11 +47,15 @@ public class User {
     }
 
     public void printHand(){
-        System.out.println("Your hand is: ");
+        System.out.println(name+"'s hand is: ");
 
         for (Card card : cards) {
             System.out.println(card);
         }
+    }
+    
+    public String toString(){
+        return name;    
     }
 
 

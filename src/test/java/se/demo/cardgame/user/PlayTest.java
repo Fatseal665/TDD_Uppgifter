@@ -18,7 +18,7 @@ public class PlayTest {
         hand.add(card);
 
         Deck deck = new Deck(hand);
-        User user = new User();
+        User user = new User("Player");
 
         Play.hit(user, deck);
 
@@ -36,7 +36,7 @@ public class PlayTest {
         cards.add(new Card(14, Suit.SPADES));
 
         Deck deck = new Deck(cards);
-        User dealer = new User();
+        User dealer = new User("Dealer");
 
         Play.dealerPlay(dealer, deck);
 
@@ -55,7 +55,7 @@ public class PlayTest {
 
 
         Deck deck = new Deck(cards);
-        User dealer = new User();
+        User dealer = new User("Dealer");
 
         Play.dealerPlay(dealer, deck);
         assertEquals(24, dealer.getPoints());
@@ -68,9 +68,9 @@ public class PlayTest {
         hand.add(new Card(11, Suit.SPADES));
         hand.add(new Card(12, Suit.SPADES));
 
-        User player = new User();
+        User player = new User("Player");
         giveCards(hand, player);
-        User dealer = new User();
+        User dealer = new User("Dealer");
         giveCards(hand, dealer);
 
         boolean playerWin = Play.calculateResult(player,dealer);
@@ -86,12 +86,12 @@ public class PlayTest {
         hand.add(new Card(11, Suit.SPADES));
 
 
-        User player = new User();
+        User player = new User("Player");
         giveCards(hand, player);
 
         hand.add(new Card(12, Suit.SPADES));
 
-        User dealer = new User();
+        User dealer = new User("Dealer");
         giveCards(hand, dealer);
 
         boolean playerWin = Play.calculateResult(player,dealer);
@@ -105,12 +105,12 @@ public class PlayTest {
         hand.add(new Card(10, Suit.SPADES));
         hand.add(new Card(11, Suit.SPADES));
 
-        User dealer = new User();
+        User dealer = new User("Dealer");
         giveCards(hand, dealer);
 
         hand.add(new Card(12, Suit.SPADES));
 
-        User player = new User();
+        User player = new User("Player");
         giveCards(hand, player);
 
         boolean playerWin = Play.calculateResult(player,dealer);
@@ -128,9 +128,9 @@ public class PlayTest {
         hand2.add(new Card(10, Suit.HEARTS));
         hand2.add(new Card(7, Suit.HEARTS));
 
-        User player = new User();
+        User player = new User("Player");
         giveCards(hand1, player);
-        User dealer = new User();
+        User dealer = new User("Dealer");
         giveCards(hand2, dealer);
 
         boolean playerWin = Play.calculateResult(player,dealer);
@@ -148,9 +148,9 @@ public class PlayTest {
         hand2.add(new Card(10, Suit.HEARTS));
         hand2.add(new Card(11, Suit.HEARTS));
 
-        User player = new User();
+        User player = new User("Player");
         giveCards(hand1, player);
-        User dealer = new User();
+        User dealer = new User("Dealer");
         giveCards(hand2, dealer);
 
         boolean playerWin = Play.calculateResult(player,dealer);
@@ -163,9 +163,9 @@ public class PlayTest {
         hand.add(new Card(10, Suit.SPADES));
         hand.add(new Card(11, Suit.SPADES));
 
-        User player = new User();
+        User player = new User("Player");
         giveCards(hand, player);
-        User dealer = new User();
+        User dealer = new User("Dealer");
         giveCards(hand, dealer);
 
         boolean playerWin = Play.calculateResult(player,dealer);

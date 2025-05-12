@@ -16,7 +16,7 @@ public class UserInterfaceTest {
     void testUIHit() {
 
     }
-    
+
     @Test
     void testChoiceHit() {
         Card card = new Card(2, Suit.SPADES);
@@ -24,7 +24,7 @@ public class UserInterfaceTest {
         hand.add(card);
 
         Deck deck = new Deck(hand);
-        User user = new User();
+        User user = new User("Player");
 
         UserInterface.choiceMade("hit", deck, user);
 
@@ -38,8 +38,8 @@ public class UserInterfaceTest {
         hand.add(card);
 
         Deck deck = new Deck(hand);
-        User user = new User();
-        
+        User user = new User("Player");
+
         boolean continued = UserInterface.choiceMade("hit", deck, user);
 
         assertTrue(continued);
@@ -48,7 +48,7 @@ public class UserInterfaceTest {
     @Test
     void testChoiceStay() {
         Deck deck = new Deck();
-        User user = new User();
+        User user = new User("Player");
 
         boolean continued = UserInterface.choiceMade("stay", deck, user);
 
@@ -58,13 +58,13 @@ public class UserInterfaceTest {
     @Test
     void testChoiceViewHand() {
         Deck deck = new Deck();
-        User user = new User();
+        User user = new User("Player");
 
         boolean continued = UserInterface.choiceMade("view hand", deck, user);
 
         assertTrue(continued);
     }
-    
+
 
 
 }

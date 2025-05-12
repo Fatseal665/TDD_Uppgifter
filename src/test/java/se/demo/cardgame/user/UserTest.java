@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class UserTest {
     @Test
     void testIfPlayerCanKeepCards() {
-        User user = new User();
+        User user = new User("Player");
         Card card = new Card(7, Suit.SPADES);
 
         user.giveCard(card);
@@ -20,7 +20,7 @@ public class UserTest {
 
     @Test
     void testIfPlayerCanKeepSeveralCards() {
-        User user = new User();
+        User user = new User("Player");
         Card card1 = new Card(7, Suit.SPADES);
         Card card2 = new Card(14, Suit.HEARTS);
 
@@ -37,7 +37,7 @@ public class UserTest {
 
     @Test
     void testIfPlayerCanCalculatePointsWhitOneCard(){
-        User user = new User();
+        User user = new User("Player");
         Card card1 = new Card(7, Suit.SPADES);
 
         user.giveCard(card1);
@@ -46,7 +46,7 @@ public class UserTest {
     }
     @Test
     void testIfPlayerCanCalculateThePointsInTheirHand(){
-        User user = new User();
+        User user = new User("Player");
         Card card1 = new Card(7, Suit.SPADES);
         Card card2 = new Card(10, Suit.HEARTS);
 
@@ -57,7 +57,7 @@ public class UserTest {
     }
     @Test
     void testIfPlayerCanCalculateThePointsInTheirHandWhitAAceUnder(){
-        User user = new User();
+        User user = new User("Player");
         Card card1 = new Card(9, Suit.SPADES);
         Card card2 = new Card(14, Suit.HEARTS);
 
@@ -68,7 +68,7 @@ public class UserTest {
     }
     @Test
     void testIfPlayerCanCalculateThePointsInTheirHandWhitAAceOver(){
-        User user = new User();
+        User user = new User("Player");
         Card card1 = new Card(10, Suit.SPADES);
         Card card2 = new Card(14, Suit.HEARTS);
         Card card3 = new Card(5, Suit.CLUBS);
@@ -82,7 +82,7 @@ public class UserTest {
 
     @Test
     void printHandTest() {
-        User user = new User();
+        User user = new User("Player");
         Card card1 = new Card(7, Suit.SPADES);
         Card card2 = new Card(12, Suit.HEARTS);
 
