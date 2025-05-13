@@ -20,4 +20,21 @@ public class DeckTest {
 
         assertNotEquals(deck.drawCard(), deck.drawCard());
     }
+
+    @Test
+    public void testDeckLength(){
+        Deck deck = new Deck();
+
+        assertEquals(52, deck.deckLength());
+    }
+
+    @Test
+    public void testCreatNewDeck(){
+        Deck deck = new Deck();
+        deck.clearDeck();
+
+        deck.creatNewDeck();
+
+        assertEquals(52, deck.deckLength());
+    }
 }

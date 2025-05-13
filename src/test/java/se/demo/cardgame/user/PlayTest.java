@@ -61,5 +61,21 @@ public class PlayTest {
         Play.dealerPlay(dealer, deck);
         assertEquals(24, dealer.getPoints());
     }
+
+    @Test
+    void testDealStartHand() {
+        Card card1 = new Card(2, Suit.SPADES);
+        Card card2 = new Card(3, Suit.SPADES);
+        ArrayList<Card> hand = new ArrayList<>();
+        hand.add(card1);
+        hand.add(card2);
+
+        Deck deck = new Deck(hand);
+        User user = new Player("Player");
+
+        Play.dealStartHand(user, deck);
+
+        assertEquals(card2, user.getCard(1));
+    }
     
 }

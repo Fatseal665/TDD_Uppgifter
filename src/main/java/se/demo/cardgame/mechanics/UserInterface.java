@@ -50,6 +50,15 @@ public class UserInterface {
         return name;
     }
 
+    public static Boolean getContinue(){
+        do {
+            System.out.print("Do you want to continue? (Y/N): ");
+            String choice = scanner.nextLine().toLowerCase();
+            if(choice.equals("y") || choice.equals("yes")){return true;}
+            else if(choice.equals("n") || choice.equals("no")){return false;}
+            System.out.println("Invalid choice\n");
+        }while(true);
+    }
     public static boolean choiceMade(String choice, Deck deck, User user) {
         return switch (choice) {
             case "hit" -> {

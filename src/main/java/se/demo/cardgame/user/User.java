@@ -21,6 +21,8 @@ public abstract class User {
         return cards.get(cardId);
     }
 
+    public void clearHand(){cards.clear();}
+
     public int getPoints() {
         int points = 0;
         int numberOfAces = 0;

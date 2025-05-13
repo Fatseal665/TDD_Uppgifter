@@ -25,5 +25,10 @@ public class Dealer extends User {
     public Deck getDeck() {
         return deck;
     }
+    public void printHiddenHand(){
+        System.out.println("Dealer's hand is: ");
+        System.out.println(super.getCard(0));
+        System.out.println("Hidden Card");
+    }
 
 }
