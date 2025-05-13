@@ -1,6 +1,8 @@
 package se.demo.cardgame;
 
-import se.demo.cardgame.cards.Deck;
+import se.demo.cardgame.mechanics.GameLogic;
+import se.demo.cardgame.mechanics.Play;
+import se.demo.cardgame.mechanics.UserInterface;
 import se.demo.cardgame.user.*;
 
 public class Main {
@@ -23,7 +25,7 @@ public class Main {
 
         Play.dealerPlay(dealer, dealer.getDeck());
 
-        boolean win = Play.calculateResult(player, dealer);
+        boolean win = GameLogic.calculateResult(player, dealer);
 
         if(win){
             System.out.println(player+" Wins !!!!!!!!!!!!!!!!!!!!!!!");

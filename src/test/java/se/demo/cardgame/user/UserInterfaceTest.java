@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Deck;
 import se.demo.cardgame.cards.Suit;
+import se.demo.cardgame.mechanics.UserInterface;
 
 import java.util.ArrayList;
 

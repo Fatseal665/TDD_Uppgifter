@@ -1,6 +1,7 @@
-package se.demo.cardgame.user;
+package se.demo.cardgame.mechanics;
 
 import se.demo.cardgame.cards.Deck;
+import se.demo.cardgame.user.User;
 
 import java.util.Scanner;
 
