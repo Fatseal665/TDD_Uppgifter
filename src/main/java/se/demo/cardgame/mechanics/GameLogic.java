@@ -5,11 +5,11 @@ import se.demo.cardgame.user.User;
 public class GameLogic {
     static void printResult(User user) {
         if (user.getPoints() > 21) {
-            System.out.println(user + " went bust with " + user.getPoints() + " points");
+            System.out.println(user + " went bust with " + user.getPoints() + " points\n");
         } else if (user.getPoints() == 21) {
-            System.out.println(user + " got blackjack");
+            System.out.println(user + " got blackjack!\n");
         } else {
-            System.out.println(user + " ended with " + user.getPoints() + " points");
+            System.out.println(user + " ended with " + user.getPoints() + " points\n");
         }
     }
 

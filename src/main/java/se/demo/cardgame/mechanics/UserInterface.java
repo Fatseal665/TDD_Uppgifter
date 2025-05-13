@@ -17,14 +17,14 @@ public class UserInterface {
 
         do {
             System.out.println("Hit \nStay \nView hand");
-            System.out.print("Enter Your Choice: ");
+            System.out.print("\nEnter Your Choice: \n");
             choice = scanner.nextLine().toLowerCase();
 
             switch (choice) {
                     case "view hand" , "view" , "stay", "hit": validChoice = true; break;
                 default:
                     validChoice = false;
-                    System.out.println("Invalid choice\n");
+                    System.out.println("\nInvalid choice\n");
                 break;
             }
         } while (!validChoice);
@@ -46,17 +46,17 @@ public class UserInterface {
     public static String getUserName(){
         System.out.print("Enter your name: ");
         String name =scanner.nextLine();
-        System.out.println("Welcome "+name);
+        System.out.println("Welcome "+name+"\n");
         return name;
     }
 
     public static Boolean getContinue(){
         do {
-            System.out.print("Do you want to continue? (Y/N): ");
+            System.out.print("Do you want to continue? (Y/N): \n");
             String choice = scanner.nextLine().toLowerCase();
             if(choice.equals("y") || choice.equals("yes")){return true;}
             else if(choice.equals("n") || choice.equals("no")){return false;}
-            System.out.println("Invalid choice\n");
+            System.out.println("\nInvalid choice\n");
         }while(true);
     }
     public static boolean choiceMade(String choice, Deck deck, User user) {

@@ -1,6 +1,6 @@
 package se.demo.cardgame.user;
 
-import se.demo.cardgame.cards.Card;
+import se.demo.cardgame.mechanics.UserInterface;
 
 public class Player extends User{
     private String name;
@@ -11,9 +11,9 @@ public class Player extends User{
 
     @Override
     public void printHand(){
-        System.out.println(name+"'s hand is: ");
-
+        System.out.println("\n"+name+"'s hand is: ");
         super.printHand();
+        UserInterface.pause();
     }
 
     @Override

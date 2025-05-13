@@ -26,9 +26,9 @@ public class Play {
             boolean win = GameLogic.calculateResult(player, dealer);
 
             if (win) {
-                System.out.println(player + " Wins !!!!!!!!!!!!!!!!!!!!!!!");
+                System.out.println(player + " Wins !!!!!!!!!!!!!!!!!!!!!!!\n");
             } else {
-                System.out.println(dealer + " Wins :(");
+                System.out.println(dealer + " Wins :(\n");
             }
             dealer.clearHand();
             player.clearHand();
@@ -60,10 +60,11 @@ public class Play {
         if(deck.deckLength()>0) {
             Card card = deck.drawCard();
             user.giveCard(card);
-        }else {
-            System.out.println("deck empty");
+        }else{
+            System.out.println("\nDeck empty\n");
             deck.creatNewDeck();
             deck.shuffle();
+            hit(user, deck);
         }
     }
 
