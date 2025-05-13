@@ -1,28 +1,27 @@
 package se.demo.cardgame;
 
 import se.demo.cardgame.cards.Deck;
-import se.demo.cardgame.user.UserInterface;
-import se.demo.cardgame.user.Play;
-import se.demo.cardgame.user.User;
+import se.demo.cardgame.user.*;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Blackjack!");
 
-        Deck deck = new Deck();
-        deck.shuffle();
-        String name = UserInterface.getUserName();
-        User player = new User(name);
-        User dealer = new User("Dealer");
 
+        String name = UserInterface.getUserName();
+        Player player = new Player(name);
+        Dealer dealer = new Dealer();
+
+
+        dealer.dealerShuffle();
         //deal first hand
 
         dealer.printHand();
         player.printHand();
 
-        Play.playerPlay(player,deck);
+        Play.playerPlay(player, dealer.getDeck());
 
-        Play.dealerPlay(dealer, deck);
+        Play.dealerPlay(dealer, dealer.getDeck());
 
         boolean win = Play.calculateResult(player, dealer);
 

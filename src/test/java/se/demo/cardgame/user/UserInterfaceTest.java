@@ -24,7 +24,7 @@ public class UserInterfaceTest {
         hand.add(card);
 
         Deck deck = new Deck(hand);
-        User user = new User("Player");
+        User user = new Player("Player");
 
         UserInterface.choiceMade("hit", deck, user);
 
@@ -38,7 +38,7 @@ public class UserInterfaceTest {
         hand.add(card);
 
         Deck deck = new Deck(hand);
-        User user = new User("Player");
+        User user = new Player("Player");
 
         boolean continued = UserInterface.choiceMade("hit", deck, user);
 
@@ -48,7 +48,7 @@ public class UserInterfaceTest {
     @Test
     void testChoiceStay() {
         Deck deck = new Deck();
-        User user = new User("Player");
+        User user = new Player("Player");
 
         boolean continued = UserInterface.choiceMade("stay", deck, user);
 
@@ -58,7 +58,7 @@ public class UserInterfaceTest {
     @Test
     void testChoiceViewHand() {
         Deck deck = new Deck();
-        User user = new User("Player");
+        User user = new Player("Player");
 
         boolean continued = UserInterface.choiceMade("view hand", deck, user);
 

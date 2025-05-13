@@ -1,8 +1,8 @@
 package se.demo.cardgame.cards;
 
 public class Card {
-    int value;
-    Suit suit;
+    private int value;
+    private Suit suit;
 
     public Card(int value, Suit suit) {
         this.value = value;

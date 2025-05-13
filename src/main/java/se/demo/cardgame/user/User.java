@@ -4,13 +4,10 @@ import se.demo.cardgame.cards.Card;
 
 import java.util.ArrayList;
 
-public class User {
+public abstract class User {
     private ArrayList<Card> cards = new ArrayList<>();
-    private String name;
 
-    public User(String name) {
-        this.name = name;
-    }
+    public User() {}
 
     public void giveCard(Card card) {
         cards.add(card);
@@ -38,7 +35,7 @@ public class User {
             }
         }
         for (int i = 0; i < numberOfAces; i++) {
-            if (points + 11 <= 21) {
+            if ((points + 11)+(numberOfAces-(i+1)) <= 21) {
                 points += 11;
             } else points += 1;
         }
@@ -47,15 +44,13 @@ public class User {
     }
 
     public void printHand(){
-        System.out.println(name+"'s hand is: ");
-
         for (Card card : cards) {
             System.out.println(card);
         }
     }
     
     public String toString(){
-        return name;    
+        return "User";
     }
 
 
