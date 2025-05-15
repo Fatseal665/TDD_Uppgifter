@@ -29,7 +29,7 @@ public class UserInterfaceTest {
         Deck deck = new Deck(hand);
         User user = new Player("Player");
 
-        UserInterface.choiceMade("hit", deck, user, new Dealer());
+        UserInterface.choiceMade("hit", user, new Dealer());
 
         assertEquals(card, user.getCard(0));
     }
@@ -43,7 +43,7 @@ public class UserInterfaceTest {
         Deck deck = new Deck(hand);
         User user = new Player("Player");
 
-        boolean continued = UserInterface.choiceMade("hit", deck, user, new Dealer());
+        boolean continued = UserInterface.choiceMade("hit", user, new Dealer());
 
         assertTrue(continued);
     }
@@ -53,7 +53,7 @@ public class UserInterfaceTest {
         Deck deck = new Deck();
         User user = new Player("Player");
 
-        boolean continued = UserInterface.choiceMade("stay", deck, user, new Dealer());
+        boolean continued = UserInterface.choiceMade("stay", user, new Dealer());
 
         assertFalse(continued);
     }
@@ -63,7 +63,7 @@ public class UserInterfaceTest {
         Deck deck = new Deck();
         User user = new Player("Player");
 
-        boolean continued = UserInterface.choiceMade("view hand", deck, user, new Dealer());
+        boolean continued = UserInterface.choiceMade("view hand", user, new Dealer());
 
         assertTrue(continued);
     }

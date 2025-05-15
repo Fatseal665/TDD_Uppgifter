@@ -48,7 +48,7 @@ public class Play {
         boolean cont;
         do {
             String choice = UserInterface.playerChoice();
-            cont = UserInterface.choiceMade(choice, dealer.getDeck(), player, dealer);
+            cont = UserInterface.choiceMade(choice, player, dealer);
             player.printHand();
         } while (cont && player.getPoints() <= 21);
 

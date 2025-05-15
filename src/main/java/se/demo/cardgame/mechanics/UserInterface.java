@@ -60,10 +60,10 @@ public class UserInterface {
             System.out.println("\nInvalid choice\n");
         }while(true);
     }
-    public static boolean choiceMade(String choice, Deck deck, User user, Dealer dealer) {
+    public static boolean choiceMade(String choice, User user, Dealer dealer) {
         return switch (choice) {
             case "hit" -> {
-                Play.hit(user, deck);
+                Play.hit(user, dealer.getDeck());
                 yield true;
             }
             case "stay" -> false;
