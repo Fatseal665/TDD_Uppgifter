@@ -1,9 +1,11 @@
-package se.demo.cardgame.user;
+package se.demo.cardgame.mechanics;
 
 import org.junit.jupiter.api.Test;
 import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Suit;
-import se.demo.cardgame.mechanics.GameLogic;
+import se.demo.cardgame.user.Dealer;
+import se.demo.cardgame.user.Player;
+import se.demo.cardgame.user.User;
 
 import java.util.ArrayList;
 

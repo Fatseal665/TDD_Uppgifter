@@ -1,11 +1,13 @@
-package se.demo.cardgame.user;
+package se.demo.cardgame.mechanics;
 
 
 import org.junit.jupiter.api.Test;
 import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Deck;
 import se.demo.cardgame.cards.Suit;
-import se.demo.cardgame.mechanics.Play;
+import se.demo.cardgame.user.Dealer;
+import se.demo.cardgame.user.Player;
+import se.demo.cardgame.user.User;
 
 import java.util.ArrayList;
 
@@ -36,10 +38,10 @@ public class PlayTest {
         //This card should not appear
         cards.add(new Card(14, Suit.SPADES));
 
-        Deck deck = new Deck(cards);
-        User dealer = new Dealer();
-
-        Play.dealerPlay(dealer, deck);
+        Dealer dealer = new Dealer(cards);
+        Player player = new Player("Player");
+        player.giveCard(new Card(14, Suit.SPADES));
+        Play.dealerPlay(dealer, player);
 
         assertEquals(18, dealer.getPoints());
     }
@@ -54,14 +56,34 @@ public class PlayTest {
         //This card should not appear
         cards.add(new Card(14, Suit.SPADES));
 
+        Dealer dealer = new Dealer(cards);
+        Player player = new Player("Player");
+        player.giveCard(new Card(9, Suit.SPADES));
+        player.giveCard(new Card(9, Suit.HEARTS));
 
-        Deck deck = new Deck(cards);
-        User dealer = new Dealer();
-
-        Play.dealerPlay(dealer, deck);
+        Play.dealerPlay(dealer, player);
         assertEquals(24, dealer.getPoints());
     }
 
+    @Test
+    void testDealerAIBustedPlayer() {
+        ArrayList<Card> cards = new ArrayList<Card>();
+
+        cards.add(new Card(2, Suit.SPADES));
+        cards.add(new Card(2, Suit.DIAMONDS));
+        //This card should not appear
+        cards.add(new Card(2, Suit.CLUBS));
+
+        Dealer dealer = new Dealer(cards);
+        Play.dealStartHand(dealer, dealer.getDeck());
+        Player player = new Player("Player");
+        player.giveCard(new Card(9, Suit.SPADES));
+        player.giveCard(new Card(9, Suit.HEARTS));
+        player.giveCard(new Card(9, Suit.CLUBS));
+
+        Play.dealerPlay(dealer, player);
+        assertEquals(4, dealer.getPoints());
+    }
     @Test
     void testDealStartHand() {
         Card card1 = new Card(2, Suit.SPADES);

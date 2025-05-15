@@ -8,7 +8,7 @@ import se.demo.cardgame.user.User;
 
 public class Play {
 
-    public static void StartGame(Dealer dealer, Player player) {
+    public static void startGame(Dealer dealer, Player player) {
         boolean cont;
         do {
             dealStartHand(player,dealer.getDeck());
@@ -21,7 +21,7 @@ public class Play {
 
             dealer.printHand();
 
-            Play.dealerPlay(dealer, dealer.getDeck());
+            Play.dealerPlay(dealer, player);
 
             boolean win = GameLogic.calculateResult(player, dealer);
 
@@ -36,10 +36,10 @@ public class Play {
         }while(cont);
     }
 
-    public static void dealerPlay(User dealer, Deck deck) {
-        while (dealer.getPoints() <= 17) {
+    public static void dealerPlay(Dealer dealer, Player player) {
+        while (player.getPoints() < 21 && player.getPoints() >= dealer.getPoints()) {
             UserInterface.pause();
-            hit(dealer, deck);
+            hit(dealer, dealer.getDeck());
             dealer.printHand();
         }
         GameLogic.printResult(dealer);

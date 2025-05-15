@@ -1,6 +1,11 @@
 package se.demo.cardgame.user;
 
+import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Deck;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dealer extends User {
     Deck deck;
@@ -8,6 +13,11 @@ public class Dealer extends User {
     public Dealer() {
         super();
         deck = new Deck();
+    }
+
+    public Dealer(ArrayList<Card> cards) {
+        super();
+        deck = new Deck(cards);
     }
 
     @Override
