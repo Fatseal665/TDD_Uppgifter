@@ -12,13 +12,13 @@ The suit does not matter
 
 #2 Goal
 
-get more points than the house/dealer and not go bust
+Get more points than the house/dealer and not go bust
 
-#3 termer
+#3 Terminology
 
-Hit: get another card.
+Hit: Get another card.
 
-Stay: keep the cards you have.
+Stay: Keep the cards you have.
 
 Bust: Total goes over 21 — automatic loss
 

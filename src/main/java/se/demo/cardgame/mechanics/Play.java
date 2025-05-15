@@ -37,7 +37,7 @@ public class Play {
     }
 
     public static void dealerPlay(Dealer dealer, Player player) {
-        while (player.getPoints() < 21 && player.getPoints() >= dealer.getPoints()) {
+        while (player.getPoints() < 21 && player.getPoints() > dealer.getPoints()) {
             UserInterface.pause();
             hit(dealer, dealer.getDeck());
             dealer.printHand();
