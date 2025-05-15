@@ -1,5 +1,6 @@
 package se.demo.cardgame.user;
 
+import se.demo.cardgame.blackjackmechanics.GameLogic;
 import se.demo.cardgame.cards.Card;
 
 import java.util.ArrayList;
@@ -23,27 +24,6 @@ public abstract class User {
 
     public void clearHand(){cards.clear();}
 
-    public int getPoints() {
-        int points = 0;
-        int numberOfAces = 0;
-
-        for (Card card : cards) {
-            if (card.getValue() <= 10) {
-                points += card.getValue();
-            } else if (card.getValue() <= 13) {
-                points += 10;
-            } else if (card.getValue() == 14) {
-                numberOfAces += 1;
-            }
-        }
-        for (int i = 0; i < numberOfAces; i++) {
-            if ((points + 11)+(numberOfAces-(i+1)) <= 21) {
-                points += 11;
-            } else points += 1;
-        }
-
-        return points;
-    }
 
     public void printHand(){
         for (Card card : cards) {
@@ -53,6 +33,10 @@ public abstract class User {
     
     public String toString(){
         return "User";
+    }
+
+    public int getPoints(){
+        return  GameLogic.calculatePoints(cards);
     }
 
 

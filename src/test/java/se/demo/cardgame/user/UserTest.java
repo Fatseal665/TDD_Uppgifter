@@ -2,6 +2,7 @@ package se.demo.cardgame.user;
 
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Suit;

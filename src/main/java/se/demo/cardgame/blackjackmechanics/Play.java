@@ -1,10 +1,12 @@
-package se.demo.cardgame.mechanics;
+package se.demo.cardgame.blackjackmechanics;
 
 import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Deck;
 import se.demo.cardgame.user.Dealer;
 import se.demo.cardgame.user.Player;
 import se.demo.cardgame.user.User;
+
+
 
 public class Play {
 
@@ -14,7 +16,7 @@ public class Play {
             dealStartHand(player,dealer.getDeck());
             dealStartHand(dealer,dealer.getDeck());
 
-            dealer.printHiddenHand();
+            GameLogic.printHiddenHand(dealer);
             player.printHand();
 
             Play.playerPlay(player, dealer);

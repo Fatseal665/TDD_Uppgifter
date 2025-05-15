@@ -1,6 +1,5 @@
-package se.demo.cardgame.mechanics;
+package se.demo.cardgame.blackjackmechanics;
 
-import se.demo.cardgame.cards.Deck;
 import se.demo.cardgame.user.Dealer;
 import se.demo.cardgame.user.User;
 
@@ -68,7 +67,7 @@ public class UserInterface {
             }
             case "stay" -> false;
             case "view hand", "view" -> {
-                dealer.printHiddenHand();
+                GameLogic.printHiddenHand(dealer);
                 yield true;
             }
             default -> true;

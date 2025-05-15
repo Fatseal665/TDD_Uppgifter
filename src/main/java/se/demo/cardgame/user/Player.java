@@ -1,6 +1,6 @@
 package se.demo.cardgame.user;
 
-import se.demo.cardgame.mechanics.UserInterface;
+import se.demo.cardgame.blackjackmechanics.UserInterface;
 
 public class Player extends User{
     private String name;

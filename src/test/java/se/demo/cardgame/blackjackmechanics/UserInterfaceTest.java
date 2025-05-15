@@ -1,4 +1,4 @@
-package se.demo.cardgame.mechanics;
+package se.demo.cardgame.blackjackmechanics;
 import org.junit.jupiter.api.Test;
 import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Deck;

@@ -5,7 +5,13 @@ public class Card {
     private Suit suit;
 
     public Card(int value, Suit suit) {
-        this.value = value;
+        if (value >= 2 && value <= 14) {
+            this.value = value;
+        }
+        else {
+            System.out.println("What did you doooooooooooo!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!");
+            throw new IllegalArgumentException();
+        }
         this.suit = suit;
     }
 

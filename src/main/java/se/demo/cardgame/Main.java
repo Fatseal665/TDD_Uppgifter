@@ -1,7 +1,9 @@
 package se.demo.cardgame;
 
-import se.demo.cardgame.mechanics.Play;
-import se.demo.cardgame.mechanics.UserInterface;
+import se.demo.cardgame.blackjackmechanics.Play;
+import se.demo.cardgame.blackjackmechanics.UserInterface;
+import se.demo.cardgame.cards.Card;
+import se.demo.cardgame.cards.Suit;
 import se.demo.cardgame.user.*;
 
 public class Main {
