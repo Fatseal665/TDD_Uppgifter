@@ -1,9 +1,11 @@
-package se.demo.cardgame.user;
+package se.demo.cardgame.mechanics;
 import org.junit.jupiter.api.Test;
 import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Deck;
 import se.demo.cardgame.cards.Suit;
-import se.demo.cardgame.mechanics.UserInterface;
+import se.demo.cardgame.user.Dealer;
+import se.demo.cardgame.user.Player;
+import se.demo.cardgame.user.User;
 
 import java.util.ArrayList;
 
@@ -27,7 +29,7 @@ public class UserInterfaceTest {
         Deck deck = new Deck(hand);
         User user = new Player("Player");
 
-        UserInterface.choiceMade("hit", deck, user);
+        UserInterface.choiceMade("hit", deck, user, new Dealer());
 
         assertEquals(card, user.getCard(0));
     }
@@ -41,7 +43,7 @@ public class UserInterfaceTest {
         Deck deck = new Deck(hand);
         User user = new Player("Player");
 
-        boolean continued = UserInterface.choiceMade("hit", deck, user);
+        boolean continued = UserInterface.choiceMade("hit", deck, user, new Dealer());
 
         assertTrue(continued);
     }
@@ -51,7 +53,7 @@ public class UserInterfaceTest {
         Deck deck = new Deck();
         User user = new Player("Player");
 
-        boolean continued = UserInterface.choiceMade("stay", deck, user);
+        boolean continued = UserInterface.choiceMade("stay", deck, user, new Dealer());
 
         assertFalse(continued);
     }
@@ -61,7 +63,7 @@ public class UserInterfaceTest {
         Deck deck = new Deck();
         User user = new Player("Player");
 
-        boolean continued = UserInterface.choiceMade("view hand", deck, user);
+        boolean continued = UserInterface.choiceMade("view hand", deck, user, new Dealer());
 
         assertTrue(continued);
     }

@@ -1,11 +1,13 @@
-package se.demo.cardgame.user;
+package se.demo.cardgame.mechanics;
 
 
 import org.junit.jupiter.api.Test;
 import se.demo.cardgame.cards.Card;
 import se.demo.cardgame.cards.Deck;
 import se.demo.cardgame.cards.Suit;
-import se.demo.cardgame.mechanics.Play;
+import se.demo.cardgame.user.Dealer;
+import se.demo.cardgame.user.Player;
+import se.demo.cardgame.user.User;
 
 import java.util.ArrayList;
 
@@ -37,9 +39,9 @@ public class PlayTest {
         cards.add(new Card(14, Suit.SPADES));
 
         Deck deck = new Deck(cards);
-        User dealer = new Dealer();
+        Dealer dealer = new Dealer();
 
-        Play.dealerPlay(dealer, deck);
+        Play.dealerPlay(dealer);
 
         assertEquals(18, dealer.getPoints());
     }
@@ -56,9 +58,9 @@ public class PlayTest {
 
 
         Deck deck = new Deck(cards);
-        User dealer = new Dealer();
+        Dealer dealer = new Dealer();
 
-        Play.dealerPlay(dealer, deck);
+        Play.dealerPlay(dealer);
         assertEquals(24, dealer.getPoints());
     }
 

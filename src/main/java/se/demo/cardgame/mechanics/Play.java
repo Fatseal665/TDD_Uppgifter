@@ -8,7 +8,7 @@ import se.demo.cardgame.user.User;
 
 public class Play {
 
-    public static void StartGame(Dealer dealer, Player player) {
+    public static void startGame(Dealer dealer, Player player) {
         boolean cont;
         do {
             dealStartHand(player,dealer.getDeck());
@@ -17,11 +17,10 @@ public class Play {
             dealer.printHiddenHand();
             player.printHand();
 
-            Play.playerPlay(player, dealer.getDeck());
-
+            Play.playerPlay(player, dealer);
             dealer.printHand();
 
-            Play.dealerPlay(dealer, dealer.getDeck());
+            Play.dealerPlay(dealer);
 
             boolean win = GameLogic.calculateResult(player, dealer);
 
@@ -36,20 +35,20 @@ public class Play {
         }while(cont);
     }
 
-    public static void dealerPlay(User dealer, Deck deck) {
-        while (dealer.getPoints() <= 17) {
+    public static void dealerPlay(Dealer dealer) {
+        while (dealer.getPoints()<=17) {
             UserInterface.pause();
-            hit(dealer, deck);
+            hit(dealer, dealer.getDeck());
             dealer.printHand();
         }
         GameLogic.printResult(dealer);
     }
 
-    public static void playerPlay(User player, Deck deck) {
+    public static void playerPlay(User player, Dealer dealer) {
         boolean cont;
         do {
             String choice = UserInterface.playerChoice();
-            cont = UserInterface.choiceMade(choice, deck, player);
+            cont = UserInterface.choiceMade(choice, dealer.getDeck(), player, dealer);
             player.printHand();
         } while (cont && player.getPoints() <= 21);
 

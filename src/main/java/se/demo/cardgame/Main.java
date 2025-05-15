@@ -1,6 +1,5 @@
 package se.demo.cardgame;
 
-import se.demo.cardgame.mechanics.GameLogic;
 import se.demo.cardgame.mechanics.Play;
 import se.demo.cardgame.mechanics.UserInterface;
 import se.demo.cardgame.user.*;
@@ -15,6 +14,6 @@ public class Main {
 
         dealer.dealerShuffle();
 
-        Play.StartGame(dealer,player);
+        Play.startGame(dealer,player);
     }
 }

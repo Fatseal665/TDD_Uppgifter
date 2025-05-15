@@ -1,6 +1,7 @@
 package se.demo.cardgame.mechanics;
 
 import se.demo.cardgame.cards.Deck;
+import se.demo.cardgame.user.Dealer;
 import se.demo.cardgame.user.User;
 
 import java.util.Scanner;
@@ -59,7 +60,7 @@ public class UserInterface {
             System.out.println("\nInvalid choice\n");
         }while(true);
     }
-    public static boolean choiceMade(String choice, Deck deck, User user) {
+    public static boolean choiceMade(String choice, Deck deck, User user, Dealer dealer) {
         return switch (choice) {
             case "hit" -> {
                 Play.hit(user, deck);
@@ -67,7 +68,7 @@ public class UserInterface {
             }
             case "stay" -> false;
             case "view hand", "view" -> {
-                user.printHand();
+                dealer.printHiddenHand();
                 yield true;
             }
             default -> true;
